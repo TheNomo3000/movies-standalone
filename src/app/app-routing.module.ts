@@ -1,10 +1,35 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CheckCertificationGuard } from './application/guards/check-certification.guard';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    loadComponent: () =>
+      import('./presentation/home/home.component').then((m) => m.HomeComponent),
+  },
+  {
+    path: 'movies',
+    loadComponent: () =>
+      import('./presentation/movies/movies.component').then(
+        (m) => m.MoviesComponent
+      ),
+    canActivate: [CheckCertificationGuard],
+  },
+
+  {
+    path: 'movies/:id',
+    loadComponent: () =>
+      import('./presentation/movies-detail/movies-detail.component').then(
+        (m) => m.MoviesDetailComponent
+      ),
+    canActivate: [CheckCertificationGuard],
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
