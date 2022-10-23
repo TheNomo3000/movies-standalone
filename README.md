@@ -1,5 +1,7 @@
 # Movies (Angular 14.x)
 
+Demo deployed in Neflify https://movies.rodrigozevallos.es/
+
 This is a example [Angular 14 standalone](https://angular.io/guide/standalone-components) project and implemented with Hexagonal Architecture, get data from TMDB and show in flex layout cards with infinite scrolling.
 
 ## Project Structure
@@ -18,3 +20,9 @@ This is a example [Angular 14 standalone](https://angular.io/guide/standalone-co
 ## APIs
 
 In this project get data from [The Movie DB](https://www.themoviedb.org/) and have a mock repository too.
+
+## Libraries
+
+- Angular 14.x
+- Bulma CSS
+- FontAwesome
